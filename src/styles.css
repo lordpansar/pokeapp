@@ -1,3 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
+
+.mt-1 {
+  margin-top: 1%;
+}
+
+.mt-2 {
+  margin-top: 2%;
+}
+
+.mt-3 {
+  margin-top: 3%;
+}
+
+.mt-4 {
+  margin-top: 4%;
+}
+
+.mt-5 {
+  margin-top: 5%;
+}
+
+.mt-10 {
+  margin-top:10%;
+}
+
+.mt-20 {
+  margin-top: 20%;
+}
