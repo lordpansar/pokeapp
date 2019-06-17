@@ -19,6 +19,7 @@ import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
+      { path: 'pokemon', component: PokemonComponent },
       { path: '404', component: PageNotFoundComponent },
       { path: '**', redirectTo: '/404', pathMatch: 'full' }
     ])
