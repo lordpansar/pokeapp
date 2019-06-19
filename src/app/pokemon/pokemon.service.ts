@@ -1,5 +1,8 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpErrorResponse, HttpResponse, HttpParams } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { Observable, throwError } from "rxjs";
+import { catchError, tap } from "rxjs/operators";
+
 import { Pokemon } from './pokemon';
 
 @Injectable({
@@ -12,16 +15,32 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-  getRandomPokemon(): void {
-    let number = this.randomNumber();
+  getRandomPokemon(): Observable<Pokemon> {
+    let id = this.randomNumber();
 
-    console.log(number);
-
-    let response = this.http.get<Pokemon>(this.url+number).subscribe(console.log);
+    let response = this.http.get<Pokemon>(this.url + id).pipe(
+      tap(data => console.log('All: ' + JSON.stringify(data))),
+      catchError(this.handleError)
+    );
     console.log(response);
+
+    return response;
   }
 
   randomNumber(): number {
     return Math.floor(Math.random() * (150 - 1 + 1) + 1);
+  }
+
+  private handleError(err: HttpErrorResponse) {
+    let errorMessage = '';
+
+    if (err.error instanceof ErrorEvent) {
+      errorMessage = `An error occured: ${err.error.message}`;
+    } else {
+      errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
+    }
+
+    console.error(errorMessage);
+    return throwError(errorMessage);
   }
 }
