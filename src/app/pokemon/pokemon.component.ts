@@ -27,31 +27,33 @@ export class PokemonComponent implements OnInit {
     this.showCrazyBtn();
   }
 
-  makeShitCrazy(): void {
+  toggleCrazyShit(): void {
     let btn = document.getElementById('crazy-btn');
     let picture = document.getElementById('picture');
-    let isCrazy = document.getElementById('picture').classList.contains('spinning');
+    let isSpinning = document.getElementById('picture').classList.contains('spinning');
 
-    this.toggleSpinning(picture, isCrazy);
-    this.toggleFlashing(isCrazy);
+    this.toggleSpinning(picture, isSpinning);
+    this.toggleFlashing(isSpinning);
+    this.toggleMovement(isSpinning, picture);
+    this.shuffleStats(isSpinning);
 
     btn.innerText = 'Stop this crazy shit D:';
 
-    if (isCrazy) {
+    if (isSpinning) {
       btn.innerText = 'Make shit crazy';
     }
   }
 
-  toggleSpinning(picture: any, isCrazy: boolean): void {
+  toggleSpinning(picture: any, isSpinning: boolean): void {
 
-    if(isCrazy) {
+    if(isSpinning) {
       picture.classList.remove('spinning');
     } else {
       picture.classList.add('spinning');
     }
   }
 
-  toggleFlashing(isCrazy: boolean): void {
+  toggleFlashing(isSpinning: boolean): void {
 
     let body = document.getElementsByTagName("BODY")[0];
 
@@ -64,18 +66,19 @@ export class PokemonComponent implements OnInit {
         { backgroundColor: '#f47641' },
         { backgroundColor: '#d6d3d1' }
       ],
-        { duration: 600, iterations: Infinity, id: '1' }
+        { duration: 600, iterations: Infinity }
     )
 
     animation.pause();
 
-    if (!isCrazy) {
+    if (!isSpinning) {
       animation.play(); 
     } else {
       animation.cancel;
     }
   }
 
+  toggleMovement(isSpinning: boolean, picture: any): void {
   showCrazyBtn(): void {
     let crazyBtn = document.getElementById('crazy-btn');
     crazyBtn.style.visibility = 'visible';
