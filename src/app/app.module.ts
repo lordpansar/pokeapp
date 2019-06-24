@@ -8,12 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 
+import { CapitalLetterPipe } from './shared/capital-letter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PokemonComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CapitalLetterPipe
   ],
   imports: [
     BrowserModule,
