@@ -12,6 +12,7 @@ export class RandomPokemonComponent implements OnInit {
   constructor(private pokemonService : PokemonService) { }
 
   ngOnInit() {
+    this.getRandomPokemon();
   }
 
   pokemon: Pokemon;
