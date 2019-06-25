@@ -1,0 +1,36 @@
+<div class="text-center">
+  <img *ngIf="pokemon" [src]="pokemon.sprites.front_default" id="picture" />
+</div>
+<div class="table-responsive">
+  <table class="table" *ngIf="pokemon">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Weight</th>
+            <th>Height</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#{{pokemon.id}}</td>
+            <td>{{pokemon.name | capitalLetter }}</td>
+            <td>{{pokemon.types[0].type.name | capitalLetter }}</td>
+            <td>{{pokemon.weight | divideByTen }}kg</td>
+            <td>{{pokemon.height | divideByTen }}m</td>
+          </tr>
+        </tbody> 
+      </table>
+    </div>
+
+<div class="row">
+  <div class="col-md-12 text-center mt-5">
+    <button type="button" class="btn btn-primary" (click)="getRandomPokemon()">Random Pokémon</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 text-center mt-5">
+    <button type="button" id="crazy-btn" class="btn btn-danger" (click)="toggleCrazyShit()">Make shit crazy</button>
+  </div>
+</div>

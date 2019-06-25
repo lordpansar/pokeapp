@@ -4,7 +4,7 @@ import { Pokemon } from './pokemon';
 
 @Component({
   selector: 'app-pokemon',
-  templateUrl: './pokemon.component.html',
+  templateUrl: './randompokemon.component.html',
   styleUrls: ['./pokemon.component.css']
 })
 export class RandomPokemonComponent implements OnInit {
