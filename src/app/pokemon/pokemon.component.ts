@@ -35,7 +35,6 @@ export class PokemonComponent implements OnInit {
     this.toggleSpinning(picture, isSpinning);
     this.toggleFlashing(isSpinning);
     this.toggleMovement(isSpinning, picture);
-    this.shuffleStats(isSpinning);
 
     btn.innerText = 'Stop this crazy shit D:';
 
@@ -79,6 +78,27 @@ export class PokemonComponent implements OnInit {
   }
 
   toggleMovement(isSpinning: boolean, picture: any): void {
+
+    let animation = picture.animate([
+      { marginTop: '0px' },
+      { marginTop: this.pokemonService.randomNumber() + 'px' },
+      { marginTop: this.pokemonService.randomNumber() + 'px' },
+      { marginTop: this.pokemonService.randomNumber() + 'px' }
+    ],
+      { duration: 400, iterations: 10 }
+    )
+
+    animation.pause();
+
+    if (!isSpinning) {
+      animation.play();
+    } else {
+      animation.cancel;
+      picture.style.marginLeft = '0px';
+      console.log(picture.style.marginLeft);
+    }
+  }
+
   showCrazyBtn(): void {
     let crazyBtn = document.getElementById('crazy-btn');
     crazyBtn.style.visibility = 'visible';
