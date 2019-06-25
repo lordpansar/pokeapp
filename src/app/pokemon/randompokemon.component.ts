@@ -7,7 +7,7 @@ import { Pokemon } from './pokemon';
   templateUrl: './pokemon.component.html',
   styleUrls: ['./pokemon.component.css']
 })
-export class PokemonComponent implements OnInit {
+export class RandomPokemonComponent implements OnInit {
 
   constructor(private pokemonService : PokemonService) { }
 
