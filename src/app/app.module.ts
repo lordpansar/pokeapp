@@ -29,6 +29,7 @@ import { DivideByTenPipe } from './shared/divide-by-ten.pipe';
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'pokemon', component: PokemonComponent },
+      { path: 'pokemon/:id', component: PokemonComponent },
       { path: 'random', component: RandomPokemonComponent },
       { path: '404', component: PageNotFoundComponent },
       { path: '**', redirectTo: '/404', pathMatch: 'full' }
