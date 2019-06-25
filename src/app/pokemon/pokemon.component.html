@@ -17,8 +17,8 @@
             <td>#{{pokemon.id}}</td>
             <td>{{pokemon.name | capitalLetter }}</td>
             <td>{{pokemon.types[0].type.name | capitalLetter }}</td>
-            <td>{{pokemon.weight / 10}}kg</td>
-            <td>{{pokemon.height / 10}}m</td>
+            <td>{{pokemon.weight | divideByTen }}kg</td>
+            <td>{{pokemon.height | divideByTen }}m</td>
           </tr>
         </tbody> 
       </table>

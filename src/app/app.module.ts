@@ -9,6 +9,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 
 import { CapitalLetterPipe } from './shared/capital-letter.pipe';
+import { DivideByTenPipe } from './shared/divide-by-ten.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CapitalLetterPipe } from './shared/capital-letter.pipe';
     HomeComponent,
     PokemonComponent,
     PageNotFoundComponent,
-    CapitalLetterPipe
+    CapitalLetterPipe,
+    DivideByTenPipe
   ],
   imports: [
     BrowserModule,
