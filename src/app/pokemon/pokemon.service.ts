@@ -18,6 +18,15 @@ export class PokemonService {
   getRandomPokemon(): Observable<Pokemon> {
     let id = this.getRandomNumber();
 
+    return this.makeHttpCall(id);
+  }
+
+  getPokemonById(id: number): Observable<Pokemon> {
+
+    return this.makeHttpCall(id);
+  }
+
+  makeHttpCall(id: number): Observable<Pokemon> {
     let response = this.http.get<Pokemon>(this.url + id).pipe(
       tap(data => console.log('All: ' + JSON.stringify(data))),
       catchError(this.handleError)
