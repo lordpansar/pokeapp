@@ -16,7 +16,7 @@ export class PokemonService {
   constructor(private http: HttpClient) { }
 
   getRandomPokemon(): Observable<Pokemon> {
-    let id = this.randomNumber();
+    let id = this.getRandomNumber();
 
     let response = this.http.get<Pokemon>(this.url + id).pipe(
       tap(data => console.log('All: ' + JSON.stringify(data))),
@@ -27,7 +27,7 @@ export class PokemonService {
     return response;
   }
 
-  randomNumber(): number {
+  getRandomNumber(): number {
     return Math.floor(Math.random() * (150 - 1 + 1) + 1);
   }
 

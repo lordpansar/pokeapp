@@ -81,9 +81,9 @@ export class PokemonComponent implements OnInit {
 
     let animation = picture.animate([
       { marginTop: '0px' },
-      { marginTop: this.pokemonService.randomNumber() + 'px' },
-      { marginTop: this.pokemonService.randomNumber() + 'px' },
-      { marginTop: this.pokemonService.randomNumber() + 'px' }
+      { marginTop: this.pokemonService.getRandomNumber() + 'px' },
+      { marginTop: this.pokemonService.getRandomNumber() + 'px' },
+      { marginTop: this.pokemonService.getRandomNumber() + 'px' }
     ],
       { duration: 400, iterations: 10 }
     )
