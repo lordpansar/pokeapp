@@ -14,6 +14,18 @@
   animation-timing-function: linear;
 }
 
+.error-message {
+  color: red;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);

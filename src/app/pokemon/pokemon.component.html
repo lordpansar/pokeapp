@@ -3,34 +3,39 @@
 </div>
 <div class="table-responsive">
   <table class="table" *ngIf="pokemon">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Weight</th>
-            <th>Height</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>#{{pokemon.id}}</td>
-            <td>{{pokemon.name | capitalLetter }}</td>
-            <td>{{pokemon.types[0].type.name | capitalLetter }}</td>
-            <td>{{pokemon.weight | divideByTen }}kg</td>
-            <td>{{pokemon.height | divideByTen }}m</td>
-          </tr>
-        </tbody> 
-      </table>
-    </div>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Weight</th>
+        <th>Height</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#{{pokemon.id}}</td>
+        <td>{{pokemon.name | capitalLetter }}</td>
+        <td>{{pokemon.types[0].type.name | capitalLetter }}</td>
+        <td>{{pokemon.weight | divideByTen }}kg</td>
+        <td>{{pokemon.height | divideByTen }}m</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<div class="row">
-  <div class="col-md-12 text-center mt-5">
-    <button type="button" class="btn btn-primary" (click)="getRandomPokemon()">Random Pokémon</button>
+<div class="row mt-3">
+  <div class="col-md-12 text-center">
+    <input type="number" min="1" max="150" id="txtNumber" />
   </div>
 </div>
-<div class="row">
-  <div class="col-md-12 text-center mt-5">
-    <button type="button" id="crazy-btn" class="btn btn-danger" (click)="toggleCrazyShit()">Make shit crazy</button>
+<div class="row error-message hide" id="error-message">
+  <div class="col-md-12 text-center mt-1">
+    <h3>Number must be between 1 and 150!</h3>
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-md-12 text-center">
+    <button type="button" class="btn btn-primary" (click)="getPokemonById()">Get Pokémon</button>
   </div>
 </div>
