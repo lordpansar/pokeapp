@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
 
 import { CapitalLetterPipe } from './shared/capital-letter.pipe';
 import { DivideByTenPipe } from './shared/divide-by-ten.pipe';
+import { NumberGuard } from './shared/number-guard';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { DivideByTenPipe } from './shared/divide-by-ten.pipe';
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'pokemon', component: PokemonComponent },
-      { path: 'pokemon/:id', component: PokemonComponent },
+      { path: 'pokemon/:id', canActivate: [NumberGuard], component: PokemonComponent },
       { path: 'random', component: RandomPokemonComponent },
       { path: '404', component: PageNotFoundComponent },
       { path: '**', redirectTo: '/404', pathMatch: 'full' }
