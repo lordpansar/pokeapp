@@ -32,7 +32,7 @@ export class PokemonComponent implements OnInit {
 
     let errorMessage = document.getElementById("error-message");
 
-    if (+id > 0 && +id < 152) {
+    if (!isNaN(+id) && +id > 0 && +id < 152) {
       this.pokemonService.getPokemonById(+id).subscribe(
         pokemon => {
           this.pokemon = pokemon;
