@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { RandomPokemonComponent } from './pokemon/randompokemon.component';
-import { PageNotFoundComponent } from './pagenotfound/pagenotfound.component';
+import { PageNotFoundComponent } from './shared/pagenotfound.component';
 
 import { CapitalLetterPipe } from './shared/capital-letter.pipe';
 import { DivideByTenPipe } from './shared/divide-by-ten.pipe';
