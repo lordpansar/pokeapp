@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 import { PokemonModule } from './pokemon/pokemon.module';
 
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { PageNotFoundComponent } from './shared/pagenotfound.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    SharedModule,
     PokemonModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },

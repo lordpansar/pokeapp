@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-//import { SharedModule } from '../shared/shared.module';
-
+import { SharedModule } from '../shared/shared.module';
 
 import { PokemonComponent } from './pokemon.component';
 import { RandomPokemonComponent } from './randompokemon.component';
@@ -15,8 +13,7 @@ import { NumberGuard } from '../shared/number-guard';
 
 @NgModule({
   imports: [
-    //SharedModule,
-    CommonModule,
+    SharedModule,
     RouterModule.forChild([
       { path: 'pokemon', component: PokemonComponent },
       { path: 'pokemon/:id', canActivate: [NumberGuard], component: PokemonComponent },
