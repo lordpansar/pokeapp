@@ -28,19 +28,22 @@ export class RandomPokemonComponent implements OnInit {
     this.showCrazyBtn();
   }
 
-  toggleCrazyShit(): void {
+  toggleCrazyStuff(): void {
     let btn = document.getElementById('crazy-btn');
     let picture = document.getElementById('picture');
     let isSpinning = document.getElementById('picture').classList.contains('spinning');
+
+    let originalText = 'Make stuff crazy';
+    let crazyText = 'Stop this crazy stuff D:';
 
     this.toggleSpinning(picture, isSpinning);
     this.toggleFlashing(isSpinning);
     this.toggleMovement(isSpinning, picture);
 
-    btn.innerText = 'Stop this crazy shit D:';
+    btn.innerText = crazyText;
 
     if (isSpinning) {
-      btn.innerText = 'Make shit crazy';
+      btn.innerText = originalText;
     }
   }
 
