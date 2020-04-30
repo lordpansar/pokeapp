@@ -23,7 +23,7 @@
     "braces": "^3.0.2",
     "font-awesome": "^4.7.0",
     "handlebars": "^4.7.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper": "^1.0.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.4.0",
